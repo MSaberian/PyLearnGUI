@@ -1,5 +1,7 @@
 
+from functools import partial
 import math
+import PySide6
 from PySide6.QtWidgets import QApplication
 from PySide6.QtUiTools import QUiLoader
 
@@ -57,36 +59,9 @@ def log():
     
 def sqrt():
     main_window.textbox.setText(str(math.sqrt(float(main_window.textbox.text()))))
-    
-def n1():
-    main_window.textbox.setText(main_window.textbox.text()+'1')
-    
-def n2():
-    main_window.textbox.setText(main_window.textbox.text()+'2')
-    
-def n3():
-    main_window.textbox.setText(main_window.textbox.text()+'3')
-    
-def n4():
-    main_window.textbox.setText(main_window.textbox.text()+'4')
-    
-def n5():
-    main_window.textbox.setText(main_window.textbox.text()+'5')
-    
-def n6():
-    main_window.textbox.setText(main_window.textbox.text()+'6')
-    
-def n7():
-    main_window.textbox.setText(main_window.textbox.text()+'7')
-    
-def n8():
-    main_window.textbox.setText(main_window.textbox.text()+'8')
-    
-def n9():
-    main_window.textbox.setText(main_window.textbox.text()+'9')
-    
-def n0():
-    main_window.textbox.setText(main_window.textbox.text()+'0')
+        
+def n(x):
+    main_window.textbox.setText(main_window.textbox.text()+x)
     
 def dot():
     main_window.textbox.setText(main_window.textbox.text()+'.')
@@ -128,16 +103,16 @@ main_window.tan.clicked.connect(tan)
 main_window.cot.clicked.connect(cot)
 main_window.log.clicked.connect(log)
 main_window.sqrt.clicked.connect(sqrt)
-main_window.n1.clicked.connect(n1)
-main_window.n2.clicked.connect(n2)
-main_window.n3.clicked.connect(n3)
-main_window.n4.clicked.connect(n4)
-main_window.n5.clicked.connect(n5)
-main_window.n6.clicked.connect(n6)
-main_window.n7.clicked.connect(n7)
-main_window.n8.clicked.connect(n8)
-main_window.n9.clicked.connect(n9)
-main_window.n0.clicked.connect(n0)
+main_window.n1.clicked.connect(partial(n,'1'))
+main_window.n2.clicked.connect(partial(n,'2'))
+main_window.n3.clicked.connect(partial(n,'3'))
+main_window.n4.clicked.connect(partial(n,'4'))
+main_window.n5.clicked.connect(partial(n,'5'))
+main_window.n6.clicked.connect(partial(n,'6'))
+main_window.n7.clicked.connect(partial(n,'7'))
+main_window.n8.clicked.connect(partial(n,'8'))
+main_window.n9.clicked.connect(partial(n,'9'))
+main_window.n0.clicked.connect(partial(n,'0'))
 main_window.dot.clicked.connect(dot)
 main_window.equal.clicked.connect(result)
 
