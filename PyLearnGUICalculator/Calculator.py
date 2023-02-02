@@ -1,7 +1,6 @@
 
 from functools import partial
 import math
-import PySide6
 from PySide6.QtWidgets import QApplication
 from PySide6.QtUiTools import QUiLoader
 
@@ -12,6 +11,13 @@ def sum():
     a = float(main_window.textbox.text())
     main_window.textbox.setText('')
     
+def operation(op):
+    global a
+    global state
+    state = op
+    a = float(main_window.textbox.text())
+    main_window.textbox.setText('')
+
 def sub():
     global a
     global state
@@ -90,10 +96,10 @@ loader = QUiLoader()
 main_window = loader.load('main.ui')
 main_window.show()
 
-main_window.sum.clicked.connect(sum)
-main_window.sub.clicked.connect(sub)
-main_window.mul.clicked.connect(mul)
-main_window.dev.clicked.connect(dev)
+main_window.sum.clicked.connect(partial(operation,'sum'))
+main_window.sub.clicked.connect(partial(operation,'sub'))
+main_window.mul.clicked.connect(partial(operation,'mul'))
+main_window.dev.clicked.connect(partial(operation,'dev'))
 main_window.AC.clicked.connect(AC)
 main_window.percent.clicked.connect(per)
 main_window.PN.clicked.connect(PN)
