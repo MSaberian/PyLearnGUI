@@ -6,4 +6,5 @@ This repository created for GUI projects.
 
 First GUI project is calculator.
 
-![_pic](https://user-images.githubusercontent.com/43343453/215558089-3059e28b-5700-40b5-8d01-3141769ecf19.png)
+
+![_pic](https://user-images.githubusercontent.com/43343453/216264301-e70b651a-b745-4e7f-aa3e-94a7639e4950.png)
