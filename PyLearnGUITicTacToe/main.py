@@ -15,7 +15,6 @@ def reset_page():
             player1_points.clear()
             player2_points.clear()
 
-
 def check_game(player_points, player):
     sum2 = 0
     sum3 = 0
