@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: rgb(14, 71, 71);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -39,7 +39,8 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: gray; border: none;</string>
+       <string notr="true">background-color: rgb(40, 100, 71);
+border: none;</string>
       </property>
       <property name="title">
        <string/>
@@ -105,6 +106,9 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(40, 71, 100);</string>
+      </property>
       <property name="text">
        <string>new game</string>
       </property>
@@ -123,6 +127,9 @@
         <pointsize>20</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(40, 100, 71);</string>
       </property>
       <property name="text">
        <string>about</string>
@@ -143,6 +150,9 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -161,6 +171,9 @@
         <pointsize>40</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
       </property>
       <property name="text">
        <string/>
@@ -181,6 +194,9 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -200,6 +216,9 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -213,11 +232,20 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>148</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="font">
        <font>
         <pointsize>40</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
       </property>
       <property name="text">
        <string/>
@@ -232,11 +260,20 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>148</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="font">
        <font>
         <pointsize>40</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
       </property>
       <property name="text">
        <string/>
@@ -256,6 +293,9 @@
         <pointsize>40</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
       </property>
       <property name="text">
        <string/>
@@ -277,7 +317,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
       </property>
       <property name="text">
        <string/>
@@ -297,6 +337,9 @@
         <pointsize>40</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 100, 110);</string>
       </property>
       <property name="text">
        <string/>

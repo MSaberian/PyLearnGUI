@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setStyleSheet(u"")
+        MainWindow.setStyleSheet(u"background-color: rgb(14, 71, 71);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -42,7 +42,8 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.groupBox_5.sizePolicy().hasHeightForWidth())
         self.groupBox_5.setSizePolicy(sizePolicy1)
         self.groupBox_5.setMinimumSize(QSize(0, 50))
-        self.groupBox_5.setStyleSheet(u"background-color: gray; border: none;")
+        self.groupBox_5.setStyleSheet(u"background-color: rgb(40, 100, 71);\n"
+"border: none;")
         self.rb_player = QRadioButton(self.groupBox_5)
         self.rb_player.setObjectName(u"rb_player")
         self.rb_player.setGeometry(QRect(10, 25, 131, 20))
@@ -67,6 +68,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(20)
         font1.setBold(True)
         self.btn_newgame.setFont(font1)
+        self.btn_newgame.setStyleSheet(u"background-color: rgb(40, 71, 100);")
 
         self.gridLayout.addWidget(self.btn_newgame, 0, 1, 1, 1)
 
@@ -75,6 +77,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_about.sizePolicy().hasHeightForWidth())
         self.btn_about.setSizePolicy(sizePolicy1)
         self.btn_about.setFont(font1)
+        self.btn_about.setStyleSheet(u"background-color: rgb(40, 100, 71);")
 
         self.gridLayout.addWidget(self.btn_about, 0, 2, 1, 1)
 
@@ -86,6 +89,7 @@ class Ui_MainWindow(object):
         font2.setPointSize(40)
         font2.setBold(True)
         self.btn1.setFont(font2)
+        self.btn1.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn1, 1, 0, 1, 1)
 
@@ -94,6 +98,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn2.sizePolicy().hasHeightForWidth())
         self.btn2.setSizePolicy(sizePolicy1)
         self.btn2.setFont(font2)
+        self.btn2.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn2, 1, 1, 1, 1)
 
@@ -102,6 +107,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn3.sizePolicy().hasHeightForWidth())
         self.btn3.setSizePolicy(sizePolicy1)
         self.btn3.setFont(font2)
+        self.btn3.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn3, 1, 2, 1, 1)
 
@@ -110,6 +116,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn4.sizePolicy().hasHeightForWidth())
         self.btn4.setSizePolicy(sizePolicy1)
         self.btn4.setFont(font2)
+        self.btn4.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn4, 2, 0, 1, 1)
 
@@ -117,7 +124,9 @@ class Ui_MainWindow(object):
         self.btn5.setObjectName(u"btn5")
         sizePolicy1.setHeightForWidth(self.btn5.sizePolicy().hasHeightForWidth())
         self.btn5.setSizePolicy(sizePolicy1)
+        self.btn5.setMinimumSize(QSize(148, 0))
         self.btn5.setFont(font2)
+        self.btn5.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn5, 2, 1, 1, 1)
 
@@ -125,7 +134,9 @@ class Ui_MainWindow(object):
         self.btn6.setObjectName(u"btn6")
         sizePolicy1.setHeightForWidth(self.btn6.sizePolicy().hasHeightForWidth())
         self.btn6.setSizePolicy(sizePolicy1)
+        self.btn6.setMinimumSize(QSize(148, 0))
         self.btn6.setFont(font2)
+        self.btn6.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn6, 2, 2, 1, 1)
 
@@ -134,6 +145,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn7.sizePolicy().hasHeightForWidth())
         self.btn7.setSizePolicy(sizePolicy1)
         self.btn7.setFont(font2)
+        self.btn7.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn7, 3, 0, 1, 1)
 
@@ -142,7 +154,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn8.sizePolicy().hasHeightForWidth())
         self.btn8.setSizePolicy(sizePolicy1)
         self.btn8.setFont(font2)
-        self.btn8.setStyleSheet(u"")
+        self.btn8.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn8, 3, 1, 1, 1)
 
@@ -151,6 +163,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn9.sizePolicy().hasHeightForWidth())
         self.btn9.setSizePolicy(sizePolicy1)
         self.btn9.setFont(font2)
+        self.btn9.setStyleSheet(u"background-color: rgb(50, 100, 110);")
 
         self.gridLayout.addWidget(self.btn9, 3, 2, 1, 1)
 

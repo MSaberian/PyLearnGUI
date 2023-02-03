@@ -3,16 +3,19 @@ from random import randint
 from functools import partial
 from PySide6.QtWidgets import QApplication, QMessageBox
 from PySide6.QtUiTools import QUiLoader
+import PySide6.QtWebEngineCore 
+
+PYSIDE_DESIGNER_PLUGINS = "."
 
 player1_points = []
 player2_points = []
 
 def set_scroreboard_color():
     if player == 1:
-        main_window.gb_x.setStyleSheet('background-color: pink')
+        main_window.gb_x.setStyleSheet('background-color: yellow')
         main_window.gb_o.setStyleSheet('background-color: gray')
     else:
-        main_window.gb_o.setStyleSheet('background-color: lightblue')
+        main_window.gb_o.setStyleSheet('background-color: blue')
         main_window.gb_x.setStyleSheet('background-color: gray')
 
 def reset_page():
@@ -80,7 +83,7 @@ def add_cpu_point():
         col = randint(0, 2)
         if not [row,col] in player1_points and not [row,col] in player2_points:
             buttons[row][col].setText('O')
-            buttons[row][col].setStyleSheet('color: blue; background-color: lightblue')
+            buttons[row][col].setStyleSheet('color: blue')
             player2_points.append([row,col])
             if check_game(player2_points, 'CPU'):
                 main_window.tb_o.setText(str(int(main_window.tb_o.text())+1))
@@ -99,7 +102,7 @@ def play(row, col):
     if not [row,col] in player1_points and not [row,col] in player2_points:
         if player == 1:
             buttons[row][col].setText('X')
-            buttons[row][col].setStyleSheet('color: red; background-color: pink')
+            buttons[row][col].setStyleSheet('color: yellow')
             player1_points.append([row,col])
             if check_game(player1_points, 'player 1'):
                 main_window.tb_x.setText(str(int(main_window.tb_x.text())+1))
@@ -112,7 +115,7 @@ def play(row, col):
 
         elif player == 2:
             buttons[row][col].setText('O')
-            buttons[row][col].setStyleSheet('color: blue; background-color: lightblue')
+            buttons[row][col].setStyleSheet('color: blue')
             player2_points.append([row,col])
             player = 1
             if check_game(player2_points, 'player 2'):
