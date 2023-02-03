@@ -1,4 +1,4 @@
-# PyLearnGUI
+# Calculator
 
 This is a calculator!!
 
