@@ -1,15 +1,11 @@
-# Tic Tac Toe
+# 15 puzzle
 
-Tic Tac Toe is a game for two players who take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+The 15 puzzle is a sliding puzzle having 15 square tiles numbered 1–15 in a frame that is 4 tiles high and 4 tiles wide, leaving one unoccupied tile position. Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in numerical order.
 
-You can use radio button to choice play withe player or cpu, after change this all data on page will be reset.
+In start, the tiles getting laid randomly, But half of the starting positions for the n puzzle are impossible to resolve. Here it is checked that the puzzle can be solved.
 
-![_cpu](https://user-images.githubusercontent.com/43343453/216640546-db2070e3-fe3c-483a-be74-2bd77f32043f.png)
 
-Points will be displayed at the bottom of the screen. By click new game, game will be reset. Scoreboard by default is gray, هn each player's turn, the color of the score will be colored.
+![_gsme](https://user-images.githubusercontent.com/43343453/218018815-4de1e677-7377-462c-9039-067f71964550.png)
 
-![_player](https://user-images.githubusercontent.com/43343453/216643252-bc200e9a-5eca-4e3f-9987-7065fd2e63f3.png)
 
-By click about, the new window show about us text.
-
-![_about](https://user-images.githubusercontent.com/43343453/216643646-5df41c8f-f1d7-4fa4-9809-e74df98b1127.png)
+![_win](https://user-images.githubusercontent.com/43343453/218018821-3469d63c-d90b-4578-8efc-a8f5bfeb0576.png)
