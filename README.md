@@ -21,3 +21,10 @@ Second GUI project is Tic Tac Toe.
 Nex GUI project is 15 puzzle.
 
 ![_gsme](https://user-images.githubusercontent.com/43343453/218018815-4de1e677-7377-462c-9039-067f71964550.png)
+
+
+## Password Generator
+
+Nex GUI project is Password Generator.
+
+![_password](https://user-images.githubusercontent.com/43343453/218064402-09eaa505-ae71-4f71-b799-20e03b6fc955.png)
