@@ -1,11 +1,7 @@
-# 15 puzzle
+# Password Generator
 
-The 15 puzzle is a sliding puzzle having 15 square tiles numbered 1–15 in a frame that is 4 tiles high and 4 tiles wide, leaving one unoccupied tile position. Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in numerical order.
+Generate strong passwords for your online accounts using this free tool. Pick from three levels of security and then generate a good password for yourself.
 
-In start, the tiles getting laid randomly, But half of the starting positions for the n puzzle are impossible to resolve. Here it is checked that the puzzle can be solved.
+This software creates three different types of passwords named Standard Strength, Extra Strong and Super Strong.
 
-
-![_gsme](https://user-images.githubusercontent.com/43343453/218018815-4de1e677-7377-462c-9039-067f71964550.png)
-
-
-![_win](https://user-images.githubusercontent.com/43343453/218018821-3469d63c-d90b-4578-8efc-a8f5bfeb0576.png)
+![_password](https://user-images.githubusercontent.com/43343453/218064402-09eaa505-ae71-4f71-b799-20e03b6fc955.png)
