@@ -15,16 +15,36 @@ class MainWindow(QMainWindow):
                         [self.ui.btn9, self.ui.btn10, self.ui.btn11, self.ui.btn12],
                         [self.ui.btn13, self.ui.btn14, self.ui.btn15, self.ui.btn16]]
 
-        r = []
-        while len(r) < 16:
-            m = random.randint(1, 16)
-            if not m in r:
-                r.append(m)
+
+        # Check if puzzle is solvable
+        check_solvable = False
+        while not check_solvable:
+
+            r = []
+            while len(r) < 16:
+                m = random.randint(1, 16)
+                if not m in r:
+                    r.append(m)
+                inv_count = 0
+                
+            for i in range(16):
+                for j in range(i + 1,16):
+                    if (r[j] != 16 and r[i] != 16 and r[i] > r[j]):
+                        inv_count+=1
+
+                if r[i] == 16:
+                    posX = 4 - i//4
+
+            if (inv_count + posX) & 1:
+                check_solvable = True
+            else:
+                check_solvable = False
+
         for i in range(4):
             for j in range(4):
-                self.buttons[i][j].setText(str(r[4*(j-1)+i]))
+                self.buttons[i][j].setText(str(r[4*i+j]))
                 self.buttons[i][j].clicked.connect(partial(self.play, i, j))
-                if r[4*(i-1)+j] == 16:
+                if r[4*i+j] == 16:
                     self.buttons[i][j].setVisible(False)
                     self.empty_i = i
                     self.empty_j = j
@@ -40,12 +60,11 @@ class MainWindow(QMainWindow):
 
             self.empty_i = i
             self.empty_j = j
-            print(i ,j)
 
             if self.check_win():
                 msg_box = QMessageBox()
                 msg_box.setText('YOU ARE WINNNN 🎊🎊🎉')
-                msg_box.exec_()
+                msg_box.exec()
 
     def check_win(self):
         index = 1
