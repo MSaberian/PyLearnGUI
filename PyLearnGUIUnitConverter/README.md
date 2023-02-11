@@ -3,8 +3,11 @@
 This program can convert units. This parameters inclode mass, length, temperature and digital volume.
 
 mass: gram, kilogram, ton and pound
+
 length: millimeter, centimeter, meter, kilometer and inch
+
 temperature: centigrade, fahrenheit and kelvin
+
 digital volume: bit, byte, kilobyte, megabyte, gigabyte and terabyte
 
 
