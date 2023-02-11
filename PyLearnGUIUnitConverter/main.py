@@ -9,71 +9,198 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.combo_initialize()
 
-        self.buttons = [[self.ui.btn1, self.ui.btn2, self.ui.btn3, self.ui.btn4],
-                        [self.ui.btn5, self.ui.btn6, self.ui.btn7, self.ui.btn8],
-                        [self.ui.btn9, self.ui.btn10, self.ui.btn11, self.ui.btn12],
-                        [self.ui.btn13, self.ui.btn14, self.ui.btn15, self.ui.btn16]]
+        self.ui.lineEdit_1.textChanged.connect(self.convert)
+        self.ui.cmb_par.currentTextChanged.connect(self.combo_initialize)
+        self.ui.cmb_unit_1.currentTextChanged.connect(self.convert)
+        self.ui.cmb_unit_2.currentTextChanged.connect(self.convert)
 
+    def combo_initialize(self):
+        if len(self.ui.cmb_par.currentText()) == 0:
+            self.ui.cmb_par.addItem('mass')
+            self.ui.cmb_par.addItem('length')
+            self.ui.cmb_par.addItem('temperature')
+            self.ui.cmb_par.addItem('digital volume')
+        
+        if self.ui.cmb_par.currentText() == 'mass':
+            self.ui.cmb_unit_1.clear()
+            self.ui.cmb_unit_1.addItem('gram')
+            self.ui.cmb_unit_1.addItem('kilograms')
+            self.ui.cmb_unit_1.addItem('ton')
+            self.ui.cmb_unit_1.addItem('pound')
+            self.ui.cmb_unit_2.clear()
+            self.ui.cmb_unit_2.addItem('gram')
+            self.ui.cmb_unit_2.addItem('kilograms')
+            self.ui.cmb_unit_2.addItem('ton')
+            self.ui.cmb_unit_2.addItem('pound')
+            self.ui.cmb_unit_2.setCurrentIndex(1)
+            
+        elif self.ui.cmb_par.currentText() == 'length':
+            self.ui.cmb_unit_1.clear()
+            self.ui.cmb_unit_1.addItem('millimeter')
+            self.ui.cmb_unit_1.addItem('centimeter')
+            self.ui.cmb_unit_1.addItem('meter')
+            self.ui.cmb_unit_1.addItem('kilometer')
+            self.ui.cmb_unit_1.addItem('inch')
+            self.ui.cmb_unit_2.clear()
+            self.ui.cmb_unit_2.addItem('millimeter')
+            self.ui.cmb_unit_2.addItem('centimeter')
+            self.ui.cmb_unit_2.addItem('meter')
+            self.ui.cmb_unit_2.addItem('kilometer')
+            self.ui.cmb_unit_2.addItem('inch')
+            self.ui.cmb_unit_2.setCurrentIndex(1)
 
-        # Check if puzzle is solvable
-        check_solvable = False
-        while not check_solvable:
+        elif self.ui.cmb_par.currentText() == 'temperature':
+            self.ui.cmb_unit_1.clear()
+            self.ui.cmb_unit_1.addItem('centigrade')
+            self.ui.cmb_unit_1.addItem('fahrenheit')
+            self.ui.cmb_unit_1.addItem('kelvin')
+            self.ui.cmb_unit_2.clear()
+            self.ui.cmb_unit_2.addItem('centigrade')
+            self.ui.cmb_unit_2.addItem('fahrenheit')
+            self.ui.cmb_unit_2.addItem('kelvin')
+            self.ui.cmb_unit_2.setCurrentIndex(1)
 
-            r = []
-            while len(r) < 16:
-                m = random.randint(1, 16)
-                if not m in r:
-                    r.append(m)
-                inv_count = 0
-                
-            for i in range(16):
-                for j in range(i + 1,16):
-                    if (r[j] != 16 and r[i] != 16 and r[i] > r[j]):
-                        inv_count+=1
+    def convert(self, text):
+        text = self.ui.lineEdit_1.text()
+        if text == '':
+            text = '0'
+        elif not ((text[-1] == '.' or text[-1].isnumeric()) and text.count('.') < 2):
+            text = text[:-1]
+            if text == '':
+                text = '0'
+        if len(text) > 1:
+            if text[0] == '0' and text[1] != '.':
+                text = text[1:]
+        self.ui.lineEdit_1.setText(text)
 
-                if r[i] == 16:
-                    posX = 4 - i//4
+        if self.ui.cmb_par.currentText() == 'mass':
+            if self.ui.cmb_unit_1.currentText() == 'gram':
+                if self.ui.cmb_unit_2.currentText() == 'gram':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'kilograms':
+                    self.ui.lineEdit_2.setText(str(float(text)/1000))
+                elif self.ui.cmb_unit_2.currentText() == 'ton':
+                    self.ui.lineEdit_2.setText(str(float(text)/1000000))
+                elif self.ui.cmb_unit_2.currentText() == 'pound':
+                    self.ui.lineEdit_2.setText(str(float(text)/453.6))
+        
+            elif self.ui.cmb_unit_1.currentText() == 'kilograms':
+                if self.ui.cmb_unit_2.currentText() == 'gram':
+                    self.ui.lineEdit_2.setText(str(float(text)*1000))
+                elif self.ui.cmb_unit_2.currentText() == 'kilograms':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'ton':
+                    self.ui.lineEdit_2.setText(str(float(text)/1000))
+                elif self.ui.cmb_unit_2.currentText() == 'pound':
+                    self.ui.lineEdit_2.setText(str(float(text)/.4536))
+                    
+            elif self.ui.cmb_unit_1.currentText() == 'ton':
+                if self.ui.cmb_unit_2.currentText() == 'gram':
+                    self.ui.lineEdit_2.setText(str(float(text)*1000000))
+                elif self.ui.cmb_unit_2.currentText() == 'kilograms':
+                    self.ui.lineEdit_2.setText(str(float(text)/1000))
+                elif self.ui.cmb_unit_2.currentText() == 'ton':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'pound':
+                    self.ui.lineEdit_2.setText(str(float(text)/.0004536))
 
-            if (inv_count + posX) & 1:
-                check_solvable = True
-            else:
-                check_solvable = False
+            elif self.ui.cmb_unit_1.currentText() == 'pound':
+                if self.ui.cmb_unit_2.currentText() == 'gram':
+                    self.ui.lineEdit_2.setText(str(float(text)*453.6))
+                elif self.ui.cmb_unit_2.currentText() == 'kilograms':
+                    self.ui.lineEdit_2.setText(str(float(text)*.4536))
+                elif self.ui.cmb_unit_2.currentText() == 'ton':
+                    self.ui.lineEdit_2.setText(str(float(text)*.0004536))
+                elif self.ui.cmb_unit_2.currentText() == 'pound':
+                    self.ui.lineEdit_2.setText(text)
+            
+        if self.ui.cmb_par.currentText() == 'length':
+            if self.ui.cmb_unit_1.currentText() == 'millimeter':
+                if self.ui.cmb_unit_2.currentText() == 'millimeter':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'centimeter':
+                    self.ui.lineEdit_2.setText(str(float(text)/10))
+                elif self.ui.cmb_unit_2.currentText() == 'meter':
+                    self.ui.lineEdit_2.setText(str(float(text)/1000))
+                elif self.ui.cmb_unit_2.currentText() == 'kilometer':
+                    self.ui.lineEdit_2.setText(str(float(text)/1000000))
+                elif self.ui.cmb_unit_2.currentText() == 'inch':
+                    self.ui.lineEdit_2.setText(str(float(text)/25.4))
+                    
+            if self.ui.cmb_unit_1.currentText() == 'centimeter':
+                if self.ui.cmb_unit_2.currentText() == 'millimeter':
+                    self.ui.lineEdit_2.setText(str(float(text)*10))
+                elif self.ui.cmb_unit_2.currentText() == 'centimeter':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'meter':
+                    self.ui.lineEdit_2.setText(str(float(text)/100))
+                elif self.ui.cmb_unit_2.currentText() == 'kilometer':
+                    self.ui.lineEdit_2.setText(str(float(text)/100000))
+                elif self.ui.cmb_unit_2.currentText() == 'inch':
+                    self.ui.lineEdit_2.setText(str(float(text)/2.54))
+                    
+            if self.ui.cmb_unit_1.currentText() == 'meter':
+                if self.ui.cmb_unit_2.currentText() == 'millimeter':
+                    self.ui.lineEdit_2.setText(str(float(text)*1000))
+                elif self.ui.cmb_unit_2.currentText() == 'centimeter':
+                    self.ui.lineEdit_2.setText(str(float(text)*100))
+                elif self.ui.cmb_unit_2.currentText() == 'meter':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'kilometer':
+                    self.ui.lineEdit_2.setText(str(float(text)/1000))
+                elif self.ui.cmb_unit_2.currentText() == 'inch':
+                    self.ui.lineEdit_2.setText(str(float(text)/0.0254))
+                    
+            if self.ui.cmb_unit_1.currentText() == 'kilometer':
+                if self.ui.cmb_unit_2.currentText() == 'millimeter':
+                    self.ui.lineEdit_2.setText(str(float(text)*1000000))
+                elif self.ui.cmb_unit_2.currentText() == 'centimeter':
+                    self.ui.lineEdit_2.setText(str(float(text)*100000))
+                elif self.ui.cmb_unit_2.currentText() == 'meter':
+                    self.ui.lineEdit_2.setText(str(float(text)*1000))
+                elif self.ui.cmb_unit_2.currentText() == 'kilometer':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'inch':
+                    self.ui.lineEdit_2.setText(str(float(text)/0.0000254))
 
-        for i in range(4):
-            for j in range(4):
-                self.buttons[i][j].setText(str(r[4*i+j]))
-                self.buttons[i][j].clicked.connect(partial(self.play, i, j))
-                if r[4*i+j] == 16:
-                    self.buttons[i][j].setVisible(False)
-                    self.empty_i = i
-                    self.empty_j = j
+            if self.ui.cmb_unit_1.currentText() == 'inch':
+                if self.ui.cmb_unit_2.currentText() == 'millimeter':
+                    self.ui.lineEdit_2.setText(str(float(text)/.03937))
+                elif self.ui.cmb_unit_2.currentText() == 'centimeter':
+                    self.ui.lineEdit_2.setText(str(float(text)/.3937))
+                elif self.ui.cmb_unit_2.currentText() == 'meter':
+                    self.ui.lineEdit_2.setText(str(float(text)/39.37))
+                elif self.ui.cmb_unit_2.currentText() == 'kilometer':
+                    self.ui.lineEdit_2.setText(str(float(text)/39370))
+                elif self.ui.cmb_unit_2.currentText() == 'inch':
+                    self.ui.lineEdit_2.setText(text)
 
-    def play(self, i ,j):
-        if abs(i-self.empty_i) + abs(j-self.empty_j) == 1:
+        if self.ui.cmb_par.currentText() == 'temperature':
+            if self.ui.cmb_unit_1.currentText() == 'centigrade':
+                if self.ui.cmb_unit_2.currentText() == 'centigrade':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'fahrenheit':
+                    self.ui.lineEdit_2.setText(str(float(text)*1.8+32))
+                elif self.ui.cmb_unit_2.currentText() == 'kelvin':
+                    self.ui.lineEdit_2.setText(str(float(text)+273.15))
 
-            self.buttons[self.empty_i][self.empty_j].setText(self.buttons[i][j].text())
-            self.buttons[i][j].setText('16')
+            if self.ui.cmb_unit_1.currentText() == 'fahrenheit':
+                if self.ui.cmb_unit_2.currentText() == 'centigrade':
+                    self.ui.lineEdit_2.setText(str((float(text)-32)/1.8))
+                elif self.ui.cmb_unit_2.currentText() == 'fahrenheit':
+                    self.ui.lineEdit_2.setText(text)
+                elif self.ui.cmb_unit_2.currentText() == 'kelvin':
+                    self.ui.lineEdit_2.setText(str((float(text)-32)/1.8+273.15))
 
-            self.buttons[self.empty_i][self.empty_j].setVisible(True)
-            self.buttons[i][j].setVisible(False)
-
-            self.empty_i = i
-            self.empty_j = j
-
-            if self.check_win():
-                msg_box = QMessageBox()
-                msg_box.setText('YOU ARE WINNNN 🎊🎊🎉')
-                msg_box.exec()
-
-    def check_win(self):
-        index = 1
-        for i in range(4):
-            for j in range(4):
-                if int(self.buttons[i][j].text()) != index:
-                    return False
-                index += 1
-        return True
+            if self.ui.cmb_unit_1.currentText() == 'kelvin':
+                if self.ui.cmb_unit_2.currentText() == 'centigrade':
+                    self.ui.lineEdit_2.setText(str(float(text)-273.15))
+                elif self.ui.cmb_unit_2.currentText() == 'fahrenheit':
+                    self.ui.lineEdit_2.setText(str((float(text)-273.15)*1.8+32))
+                elif self.ui.cmb_unit_2.currentText() == 'kelvin':
+                    self.ui.lineEdit_2.setText(text)
 
 app = QApplication(sys.argv)
 main_window = MainWindow()
