@@ -13,27 +13,22 @@ class MainWindow(QMainWindow):
 
         self.ui.btn1_unvisivable.setVisible(False)
         self.ui.btn2_unvisivable.setVisible(False)
-        self.ui.btn3_unvisivable.setVisible(False)
-        self.ui.btn4_unvisivable.setVisible(False)
-        self.CScore = 0
+        self.C1Score = 0
+        self.C2Score = 0
         self.UScore = 0
         self.TScore = 0
         
-        self.ui.btn_paper.clicked.connect(self.paper)
-        self.ui.btn_scissors.clicked.connect(self.scissors)
-        self.ui.btn_rock.clicked.connect(self.rock)
+        self.ui.btn_onhand.clicked.connect(self.onhand)
+        self.ui.btn_backhand.clicked.connect(self.backhand)
         
-    def paper(self):
+    def onhand(self):
         self.ui.btn_you.setIcon(QIcon('paper2.png'))
-        self.computerChoice(0)
+        # self.computerChoice(0)
         
-    def scissors(self):
+    def backhand(self):
         self.ui.btn_you.setIcon(QIcon('scissors2.png'))
-        self.computerChoice(1)
+        # self.computerChoice(1)
         
-    def rock(self):
-        self.ui.btn_you.setIcon(QIcon('rock2.png'))
-        self.computerChoice(2)
 
     def computerChoice(self,user_choice):
         i = random.randint(0,2)
@@ -59,6 +54,32 @@ class MainWindow(QMainWindow):
         
         self.ui.scoreboard.setText(f'     You: {self.UScore}       Ties: {self.TScore}          Computer: {self.CScore}')
 
+
+    def play(self, i ,j):
+        if abs(i-self.empty_i) + abs(j-self.empty_j) == 1:
+
+            self.buttons[self.empty_i][self.empty_j].setText(self.buttons[i][j].text())
+            self.buttons[i][j].setText('16')
+
+            self.buttons[self.empty_i][self.empty_j].setVisible(True)
+            self.buttons[i][j].setVisible(False)
+
+            self.empty_i = i
+            self.empty_j = j
+
+            if self.check_win():
+                msg_box = QMessageBox()
+                msg_box.setText('YOU ARE WINNNN 🎊🎊🎉')
+                msg_box.exec()
+
+    def check_win(self):
+        index = 1
+        for i in range(4):
+            for j in range(4):
+                if int(self.buttons[i][j].text()) != index:
+                    return False
+                index += 1
+        return True
 
 app = QApplication(sys.argv)
 main_window = MainWindow()

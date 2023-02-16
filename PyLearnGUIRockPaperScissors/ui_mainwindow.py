@@ -196,7 +196,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Puuzel 15", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Rock Paper Scissors", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"                           Computer", None))
         self.btn1_unvisivable.setText("")
         self.btn_computer.setText("")

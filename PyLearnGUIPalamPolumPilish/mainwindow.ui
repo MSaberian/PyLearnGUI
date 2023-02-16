@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>366</width>
-    <height>542</height>
+    <width>247</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>366</width>
-    <height>542</height>
+    <width>247</width>
+    <height>568</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>366</width>
-    <height>542</height>
+    <width>268</width>
+    <height>576</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -34,20 +34,40 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="label_4">
+    <item row="4" column="0">
+     <widget class="QPushButton" name="btn3_unvisivable">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>56</width>
+        <height>112</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>56</width>
+        <height>112</height>
+       </size>
+      </property>
       <property name="font">
        <font>
-        <pointsize>13</pointsize>
-        <bold>true</bold>
+        <pointsize>33</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 170, 0);</string>
+      </property>
       <property name="text">
-       <string>                           Computer</string>
+       <string/>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="1" column="0" colspan="2">
      <widget class="QPushButton" name="btn1_unvisivable">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
@@ -61,61 +81,7 @@
         <height>112</height>
        </size>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>33</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 170, 0);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="btn_computer">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>112</width>
-        <height>112</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>33</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 170, 0);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>112</width>
-        <height>112</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="btn2_unvisivable">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
+      <property name="maximumSize">
        <size>
         <width>112</width>
         <height>112</height>
@@ -134,25 +100,22 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0" colspan="3">
-     <widget class="QLabel" name="how_win">
+    <item row="6" column="0" colspan="4">
+     <widget class="QLabel" name="scoreboard_2">
       <property name="font">
        <font>
         <family>Segoe Print</family>
-        <pointsize>15</pointsize>
+        <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 170, 0);</string>
-      </property>
       <property name="text">
-       <string>               Who won?</string>
+       <string> Ties: 0    Computer2: 0   </string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QLabel" name="label_2">
+    <item row="0" column="0" colspan="4">
+     <widget class="QLabel" name="label_4">
       <property name="font">
        <font>
         <pointsize>13</pointsize>
@@ -160,98 +123,11 @@
        </font>
       </property>
       <property name="text">
-       <string>                              player</string>
+       <string>   Computer1      Computer2</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="btn3_unvisivable">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>112</width>
-        <height>112</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>33</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 170, 0);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="btn_you">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>112</width>
-        <height>112</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>33</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 170, 0);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>112</width>
-        <height>112</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QPushButton" name="btn4_unvisivable">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>112</width>
-        <height>112</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>33</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 170, 0);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0" colspan="3">
+    <item row="5" column="0" colspan="4">
      <widget class="QLabel" name="scoreboard">
       <property name="font">
        <font>
@@ -261,11 +137,11 @@
        </font>
       </property>
       <property name="text">
-       <string>     You: 0       Ties: 0          Computer: 0</string>
+       <string>  You: 0    Computer1: 0        </string>
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
+    <item row="7" column="0" colspan="2">
      <widget class="QPushButton" name="btn_paper">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
@@ -274,6 +150,12 @@
        </sizepolicy>
       </property>
       <property name="minimumSize">
+       <size>
+        <width>112</width>
+        <height>112</height>
+       </size>
+      </property>
+      <property name="maximumSize">
        <size>
         <width>112</width>
         <height>112</height>
@@ -302,7 +184,109 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="1">
+    <item row="1" column="2" colspan="2">
+     <widget class="QPushButton" name="btn_computer">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>112</width>
+        <height>112</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>112</width>
+        <height>112</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>33</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>112</width>
+        <height>112</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="3">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>                     player</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="btn2_unvisivable">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>56</width>
+        <height>112</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>56</width>
+        <height>112</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>33</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="4">
+     <widget class="QLabel" name="how_win">
+      <property name="font">
+       <font>
+        <family>Segoe Print</family>
+        <pointsize>15</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string>          Who won?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2" colspan="2">
      <widget class="QPushButton" name="btn_scissors">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
@@ -311,6 +295,12 @@
        </sizepolicy>
       </property>
       <property name="minimumSize">
+       <size>
+        <width>112</width>
+        <height>112</height>
+       </size>
+      </property>
+      <property name="maximumSize">
        <size>
         <width>112</width>
         <height>112</height>
@@ -339,8 +329,8 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="2">
-     <widget class="QPushButton" name="btn_rock">
+    <item row="4" column="1" colspan="2">
+     <widget class="QPushButton" name="btn_you">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -353,20 +343,22 @@
         <height>112</height>
        </size>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>56</width>
+        <height>112</height>
+       </size>
+      </property>
       <property name="font">
        <font>
         <pointsize>33</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(0, 170, 0);</string>
       </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>rock.png</normaloff>rock.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -383,7 +375,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>366</width>
+     <width>247</width>
      <height>22</height>
     </rect>
    </property>
