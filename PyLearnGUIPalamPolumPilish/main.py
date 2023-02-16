@@ -22,64 +22,45 @@ class MainWindow(QMainWindow):
         self.ui.btn_backhand.clicked.connect(self.backhand)
         
     def onhand(self):
-        self.ui.btn_you.setIcon(QIcon('paper2.png'))
-        # self.computerChoice(0)
+        self.ui.btn_you.setIcon(QIcon('ohhand.png'))
+        self.computerChoice(0)
         
     def backhand(self):
-        self.ui.btn_you.setIcon(QIcon('scissors2.png'))
-        # self.computerChoice(1)
+        self.ui.btn_you.setIcon(QIcon('backhand.png'))
+        self.computerChoice(1)
         
 
     def computerChoice(self,user_choice):
-        i = random.randint(0,2)
+        i = random.randint(0,1)
         if i == 0:
-            self.ui.btn_computer.setIcon(QIcon('paper2.png'))
-        elif i == 1:
-            self.ui.btn_computer.setIcon(QIcon('scissors2.png'))
+            self.ui.btn_computer1.setIcon(QIcon('ohhand.png'))
         else:
-            self.ui.btn_computer.setIcon(QIcon('rock2.png'))
+            self.ui.btn_computer1.setIcon(QIcon('backhand.png'))
+
+            
+        j = random.randint(0,1)
+        if j == 0:
+            self.ui.btn_computer2.setIcon(QIcon('ohhand.png'))
+        else:
+            self.ui.btn_computer2.setIcon(QIcon('backhand.png'))
         
-        indwin = user_choice - i
-        if indwin < 0:
-            indwin += 3
+
+        indwin = (user_choice + i + j)%3
         if indwin == 0:
+            self.ui.how_win.setText('       No one won')
             self.TScore += 1
-            self.ui.how_win.setText('              No one won')
-        elif indwin == 1:
+        elif user_choice - i - j == 1 or user_choice - i - j == -2:
             self.UScore += 1
-            self.ui.how_win.setText('               You won')
+            self.ui.how_win.setText('   You won')
+        elif user_choice == j:
+            self.C1Score += 1
+            self.ui.how_win.setText('    Computer1 won')
         else:
-            self.CScore += 1
-            self.ui.how_win.setText('            Computer won')
+            self.C2Score += 1
+            self.ui.how_win.setText('    Computer2 won')
         
-        self.ui.scoreboard.setText(f'     You: {self.UScore}       Ties: {self.TScore}          Computer: {self.CScore}')
-
-
-    def play(self, i ,j):
-        if abs(i-self.empty_i) + abs(j-self.empty_j) == 1:
-
-            self.buttons[self.empty_i][self.empty_j].setText(self.buttons[i][j].text())
-            self.buttons[i][j].setText('16')
-
-            self.buttons[self.empty_i][self.empty_j].setVisible(True)
-            self.buttons[i][j].setVisible(False)
-
-            self.empty_i = i
-            self.empty_j = j
-
-            if self.check_win():
-                msg_box = QMessageBox()
-                msg_box.setText('YOU ARE WINNNN 🎊🎊🎉')
-                msg_box.exec()
-
-    def check_win(self):
-        index = 1
-        for i in range(4):
-            for j in range(4):
-                if int(self.buttons[i][j].text()) != index:
-                    return False
-                index += 1
-        return True
+        self.ui.scoreboard.setText(f'  You: {self.UScore}    Computer1: {self.C1Score}')
+        self.ui.scoreboard_2.setText(f' Ties: {self.TScore}     Computer2: {self.C2Score}')
 
 app = QApplication(sys.argv)
 main_window = MainWindow()
