@@ -43,3 +43,9 @@ If you can read and write, this game needs no explanation!!
 
 ![_game](https://user-images.githubusercontent.com/43343453/218266227-6d2275ea-6338-4043-b6bf-c5a0418f17c2.png)
 
+## Palam Polum Pilish
+
+In this three-player game, you compete against two computers.
+
+
+![_game](https://user-images.githubusercontent.com/43343453/219443214-a0e8ddf1-8404-404c-b49f-0142afb3bb3c.png)
