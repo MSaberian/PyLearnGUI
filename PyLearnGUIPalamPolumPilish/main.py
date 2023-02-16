@@ -51,16 +51,38 @@ class MainWindow(QMainWindow):
             self.TScore += 1
         elif user_choice - i - j == 1 or user_choice - i - j == -2:
             self.UScore += 1
-            self.ui.how_win.setText('   You won')
+            self.ui.how_win.setText('       You won')
+            if self.UScore == 5:
+                msg_box = QMessageBox(text= 'You are winner')
+                msg_box.exec()  
+                self.update_score_board(True)
         elif user_choice == j:
             self.C1Score += 1
             self.ui.how_win.setText('    Computer1 won')
+            if self.C1Score == 5:
+                msg_box = QMessageBox(text= 'Computer1 is winner')
+                msg_box.exec()  
+                self.update_score_board(True)
         else:
             self.C2Score += 1
             self.ui.how_win.setText('    Computer2 won')
-        
+            if self.C2Score == 5:
+                msg_box = QMessageBox(text= 'Computer2 is winner')
+                msg_box.exec()  
+                self.update_score_board(True)
+
+        self.update_score_board()
+
+    def update_score_board(self, reset = False):
+        if reset:
+            self.UScore = 0
+            self.C1Score = 0
+            self.TScore = 0
+            self.C2Score = 0
         self.ui.scoreboard.setText(f'  You: {self.UScore}    Computer1: {self.C1Score}')
         self.ui.scoreboard_2.setText(f' Ties: {self.TScore}     Computer2: {self.C2Score}')
+
+
 
 app = QApplication(sys.argv)
 main_window = MainWindow()
