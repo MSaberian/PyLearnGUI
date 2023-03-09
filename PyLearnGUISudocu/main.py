@@ -16,8 +16,8 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.ui.actionnew.triggered.connect(self.new_game)
         self.ui.actionOpen_File.triggered.connect(self.open_file)
-        self.ui.actiongreen.triggered.connect(partial(self.setColor,'green','pink'))
-        self.ui.actionpink.triggered.connect(partial(self.setColor,'pink','green'))
+        # self.ui.actiongreen.triggered.connect(partial(self.setColor,'green','pink'))
+        # self.ui.actionpink.triggered.connect(partial(self.setColor,'pink','green'))
         self.ui.actionlight.triggered.connect(partial(self.setColor,'light','black'))
         self.ui.actiondark.triggered.connect(partial(self.setColor,'black'))
         self.line_edits = [[None for i in range(9)]for j in range(9)]
@@ -34,11 +34,11 @@ class MainWindow(QMainWindow):
             qdarktheme.setup_theme("dark")
         else:
             qdarktheme.setup_theme("light")
-            self.setStyleSheet(f'background-color: {color}')
-            for i in range(9):
-                for j in range(9):
-                    self.line_edits[i][j].setStyleSheet(f'color: {textColor}')
-        # self.check()
+            # self.setStyleSheet(f'background-color: {color}')
+            # for i in range(9):
+            #     for j in range(9):
+            #         self.line_edits[i][j].setStyleSheet(f'color: {textColor}')
+        self.check()
     
     def resetColor(self):
         self.setStyleSheet('')
@@ -47,29 +47,32 @@ class MainWindow(QMainWindow):
                 self.line_edits[i][j].setStyleSheet('')
 
     def open_file(self):
-        file_path = QFileDialog.getOpenFileName(self, 'Open file...')[0]
-        # print(file_path)
-        self.editableCells.clear()
-        f = open(file_path, 'r')
-        big_text = f.read()
-        rows = big_text.split('\n')
-        puzzle_board = [[None for i in range(9)] for j in range(9)]
-        for i in range(len(rows)):
-            cells = rows[i].split(' ')
-            for j in range(len(cells)):
-                puzzle_board[i][j] = int(cells[j])
+        try:
+            file_path = QFileDialog.getOpenFileName(self, 'Open file...')[0]
+            # print(file_path)
+            self.editableCells.clear()
+            f = open(file_path, 'r')
+            big_text = f.read()
+            rows = big_text.split('\n')
+            puzzle_board = [[None for i in range(9)] for j in range(9)]
+            for i in range(len(rows)):
+                cells = rows[i].split(' ')
+                for j in range(len(cells)):
+                    puzzle_board[i][j] = int(cells[j])
 
-        self.checkable = False
-        for i in range(9):
-            for j in range(9):
-                if puzzle_board[i][j] != 0:
-                    self.editableCells.append([i,j])
-                    self.line_edits[i][j].setText(str(puzzle_board[i][j]))
-                    self.line_edits[i][j].setReadOnly(True)
-                else:
-                    self.line_edits[i][j].setText('')
-                    self.line_edits[i][j].setReadOnly(False)
-        self.checkable = True
+            self.checkable = False
+            for i in range(9):
+                for j in range(9):
+                    if puzzle_board[i][j] != 0:
+                        self.editableCells.append([i,j])
+                        self.line_edits[i][j].setText(str(puzzle_board[i][j]))
+                        self.line_edits[i][j].setReadOnly(True)
+                    else:
+                        self.line_edits[i][j].setText('')
+                        self.line_edits[i][j].setReadOnly(False)
+            self.checkable = True
+        except:
+            print("An exception occurred to load the file")
 
     def setCellFalse(self,row,col):
         if [row,col] in self.editableCells:
@@ -83,6 +86,8 @@ class MainWindow(QMainWindow):
         for row in range(9):
             for col in range(9):
                 number1 = self.line_edits[row][col].text()
+                if number1 == '':
+                    output = False
                 for row9 in range(row+1,9):
                     number2 = self.line_edits[row9][col].text()
                     if number1 == number2 and number2 != '':
@@ -110,11 +115,9 @@ class MainWindow(QMainWindow):
                                 if number1 == number2 and number2 != '' and not (row == row3 and col == col3):
                                     self.setCellFalse(row,col)
                                     self.setCellFalse(row3,col3)
-                                    print(f'❌ row: {row}, col: {col}, row3: {row3}, col3: {col3},number1: {number1}, number2: {number2}')
+                                    # print(f'❌ row: {row}, col: {col}, row3: {row3}, col3: {col3},number1: {number1}, number2: {number2}')
                                     output = False
-
-
-
+        print(output)
         return output
 
     def validation(self, i, j, text):
@@ -122,7 +125,9 @@ class MainWindow(QMainWindow):
             if text not in ['1','2','3','4','5','6','7','8','9']:
                 self.line_edits[i][j].setText('')
             if self.check(i,j):
-                msg_box = ...
+                msg_box = QMessageBox()
+                msg_box.setText('YOU ARE WINNNN 🎊🎊🎉')
+                msg_box.exec()
 
     def picking_boxes(self, color = 'black'):
         for i in range(9):
