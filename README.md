@@ -50,3 +50,15 @@ In this three-player game, you compete against two computers.
 
 ![_game](https://user-images.githubusercontent.com/43343453/219446401-5b6dbdd5-233e-43ca-a633-dd170de7190c.png)
 
+
+## To Do List
+
+With this app user can add task with title, date, time, description and priority.
+
+
+![_App](https://user-images.githubusercontent.com/43343453/222894369-1b555f19-1814-4fe2-a485-7a0f8aba56d1.png)
+
+
+## Sudoku
+
+![_difficulty](https://user-images.githubusercontent.com/43343453/224332673-e1c0b808-2133-424c-9cc0-770a24ce6c5f.png)
