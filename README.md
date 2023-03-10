@@ -53,7 +53,7 @@ In this three-player game, you compete against two computers.
 
 ## To Do List
 
-With this app user can add task with title, date, time, description and priority.
+With this app user can add task with title, date, time, description and priority. This app in PyLearnSQL repository.
 
 
 ![_App](https://user-images.githubusercontent.com/43343453/222894369-1b555f19-1814-4fe2-a485-7a0f8aba56d1.png)
