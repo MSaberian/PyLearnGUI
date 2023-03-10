@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>449</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>449</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>449</height>
+   </size>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="tabletTracking">
+   <bool>false</bool>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Help</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Help.png</normaloff>Help.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white; border: none;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>441</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent; border: none;</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:15pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Help &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:700; color:#202122;&quot;&gt;Sudoku&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt; is a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Logic&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;logic&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt;-based &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Combinatorics&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;combinatorial&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt; number-placement &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Puzzle&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;puzzle&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt;. In classic Sudoku, the objective is to fill a 9 × 9 grid with digits so that each column, each row, and each of the nine 3 × 3 subgrids that compose the grid (also called &amp;quot;boxes&amp;quot;, &amp;quot;blocks&amp;quot;, or &amp;quot;regions&amp;quot;) contain all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff;&quot;&gt;French newspapers featured variations of the Sudoku puzzles in the 19th century, and the puzzle has appeared since 1979 in&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Puzzle_book&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;puzzle&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Puzzle_book&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#3366cc;&quot;&gt; &lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Puzzle_book&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;books&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt; under the name Number Place. However, the modern Sudoku only began to gain widespread popularity in 1986 when it was published by the Japanese puzzle company &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Nikoli_(publisher)&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;Nikoli&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt; under the name Sudoku, meaning &amp;quot;single number&amp;quot;. It first appeared in a U.S. newspaper, and then &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Times&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;The&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Times&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#3366cc;&quot;&gt; &lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Times&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;Times&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt; (London), in 2004, thanks to the efforts of &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Wayne_Gould&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;Wayne&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Wayne_Gould&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#3366cc;&quot;&gt; &lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Wayne_Gould&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;Gould&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt;, who devised a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Computer_program&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;computer&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Computer_program&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#3366cc;&quot;&gt; &lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Computer_program&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; text-decoration: underline; color:#000000;&quot;&gt;program&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122;&quot;&gt; to rapidly produce unique puzzles.&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;     &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;For more information go to             &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ok">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>370</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(150, 150, 150, 255), stop:1 rgba(170, 170, 170, 255))
+</string>
+    </property>
+    <property name="text">
+     <string>ok</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>363</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Sudoku&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;wikipedia.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="openExternalLinks">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

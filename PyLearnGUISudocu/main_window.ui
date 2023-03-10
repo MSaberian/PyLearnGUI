@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Sudoku</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>sudoku.png</normaloff>sudoku.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
@@ -46,7 +50,17 @@
     <addaction name="actionOpen_File"/>
     <addaction name="menuChane_Mode"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionHelp"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
    <addaction name="menuGame"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionnew">
@@ -70,13 +84,34 @@
    </property>
   </action>
   <action name="actionpink">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>pink</string>
    </property>
   </action>
   <action name="actiongreen">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>green</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
    </property>
   </action>
  </widget>

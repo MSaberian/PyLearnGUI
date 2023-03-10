@@ -6,8 +6,30 @@ from PySide6.QtCore import *
 from PySide6 import QtCore
 from PySide6.QtGui import *
 from main_window import Ui_MainWindow 
+import about, helpMy
 from sudoku import Sudoku
 import qdarktheme
+
+class AboutWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = about.Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.ui.btn_ok.clicked.connect(self.close_window)
+
+    def close_window(self):
+        self.close()
+
+        
+class HelpWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = helpMy.Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.ui.btn_ok.clicked.connect(self.close_window)
+
+    def close_window(self):
+        self.close()
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -20,6 +42,9 @@ class MainWindow(QMainWindow):
         # self.ui.actionpink.triggered.connect(partial(self.setColor,'pink','green'))
         self.ui.actionlight.triggered.connect(partial(self.setColor,'light','black'))
         self.ui.actiondark.triggered.connect(partial(self.setColor,'black'))
+        self.ui.actionAbout.triggered.connect(self.about)
+        self.ui.actionHelp.triggered.connect(self.helpMy)
+        self.ui.actionExit.triggered.connect(self.EXIT)
         self.line_edits = [[None for i in range(9)]for j in range(9)]
         self.editableCells = []
         self.picking_boxes()
@@ -27,6 +52,15 @@ class MainWindow(QMainWindow):
         self.them = 'light'
         self.checkable = True
         qdarktheme.setup_theme("light")
+
+    def about(self):
+        about_window.show()
+
+    def helpMy(self):
+        help_window.show()
+
+    def EXIT(self):
+        exit(0)
 
     def setColor(self, color, textColor = 'black'):
         self.them = color
@@ -49,7 +83,6 @@ class MainWindow(QMainWindow):
     def open_file(self):
         try:
             file_path = QFileDialog.getOpenFileName(self, 'Open file...')[0]
-            # print(file_path)
             self.editableCells.clear()
             f = open(file_path, 'r')
             big_text = f.read()
@@ -88,6 +121,8 @@ class MainWindow(QMainWindow):
                 number1 = self.line_edits[row][col].text()
                 if number1 == '':
                     output = False
+                elif [row,col] not in self.editableCells:
+                    self.line_edits[row][col].setStyleSheet('color: rgb(255, 85, 255);')
                 for row9 in range(row+1,9):
                     number2 = self.line_edits[row9][col].text()
                     if number1 == number2 and number2 != '':
@@ -117,7 +152,9 @@ class MainWindow(QMainWindow):
                                     self.setCellFalse(row3,col3)
                                     # print(f'❌ row: {row}, col: {col}, row3: {row3}, col3: {col3},number1: {number1}, number2: {number2}')
                                     output = False
-        print(output)
+
+            
+                                    
         return output
 
     def validation(self, i, j, text):
@@ -161,5 +198,7 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main_window = MainWindow()
+    about_window = AboutWindow()
+    help_window = HelpWindow()
     main_window.show()
     app.exec()
