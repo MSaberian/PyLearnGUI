@@ -167,6 +167,8 @@ class MainWindow(QMainWindow):
             if self.check(i,j):
                 msg_box = QMessageBox()
                 msg_box.setText('YOU ARE WINNNN 🎊🎊🎉')
+                msg_box.setWindowTitle('WIN')
+                msg_box.setWindowIcon(QIcon('win.png'))
                 msg_box.exec()
 
     def picking_boxes(self, color = 'black'):
