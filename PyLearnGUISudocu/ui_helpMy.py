@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.textEdit = QTextEdit(self.centralwidget)
         self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(30, 10, 441, 401))
+        self.textEdit.setGeometry(QRect(30, 40, 441, 401))
         font = QFont()
         font.setPointSize(15)
         self.textEdit.setFont(font)

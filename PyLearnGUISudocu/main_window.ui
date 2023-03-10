@@ -46,9 +46,19 @@
      <addaction name="actionpink"/>
      <addaction name="actiongreen"/>
     </widget>
-    <addaction name="actionnew"/>
+    <widget class="QMenu" name="menuNew">
+     <property name="title">
+      <string>New...</string>
+     </property>
+     <addaction name="actioneasy"/>
+     <addaction name="actionnormal"/>
+     <addaction name="actionhard"/>
+    </widget>
+    <addaction name="menuNew"/>
     <addaction name="actionOpen_File"/>
     <addaction name="menuChane_Mode"/>
+    <addaction name="separator"/>
+    <addaction name="actionsolve_puzzle"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -63,11 +73,6 @@
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionnew">
-   <property name="text">
-    <string>New...</string>
-   </property>
-  </action>
   <action name="actionOpen_File">
    <property name="text">
     <string>Open File</string>
@@ -112,6 +117,26 @@
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actioneasy">
+   <property name="text">
+    <string>Easy</string>
+   </property>
+  </action>
+  <action name="actionnormal">
+   <property name="text">
+    <string>Normal</string>
+   </property>
+  </action>
+  <action name="actionhard">
+   <property name="text">
+    <string>Hard</string>
+   </property>
+  </action>
+  <action name="actionsolve_puzzle">
+   <property name="text">
+    <string>solve puzzle</string>
    </property>
   </action>
  </widget>

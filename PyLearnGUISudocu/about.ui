@@ -32,7 +32,7 @@
    <bool>false</bool>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>About</string>
   </property>
   <property name="windowIcon">
    <iconset>

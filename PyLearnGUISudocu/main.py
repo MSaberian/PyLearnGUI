@@ -36,8 +36,11 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.actionnew.triggered.connect(self.new_game)
+        self.ui.actioneasy.triggered.connect(partial(self.new_game,0.35))
+        self.ui.actionnormal.triggered.connect(partial(self.new_game,0.5))
+        self.ui.actionhard.triggered.connect(partial(self.new_game,0.75))
         self.ui.actionOpen_File.triggered.connect(self.open_file)
+        self.ui.actionsolve_puzzle.triggered.connect(self.solve_puzzle)
         # self.ui.actiongreen.triggered.connect(partial(self.setColor,'green','pink'))
         # self.ui.actionpink.triggered.connect(partial(self.setColor,'pink','green'))
         self.ui.actionlight.triggered.connect(partial(self.setColor,'light','black'))
@@ -48,8 +51,7 @@ class MainWindow(QMainWindow):
         self.line_edits = [[None for i in range(9)]for j in range(9)]
         self.editableCells = []
         self.picking_boxes()
-        self.new_game()
-        self.them = 'light'
+        self.new_game(0.5)
         self.checkable = True
         qdarktheme.setup_theme("light")
 
@@ -63,7 +65,6 @@ class MainWindow(QMainWindow):
         exit(0)
 
     def setColor(self, color, textColor = 'black'):
-        self.them = color
         if color == 'black':
             qdarktheme.setup_theme("dark")
         else:
@@ -100,9 +101,11 @@ class MainWindow(QMainWindow):
                         self.editableCells.append([i,j])
                         self.line_edits[i][j].setText(str(puzzle_board[i][j]))
                         self.line_edits[i][j].setReadOnly(True)
+                        self.puzzle.board[i][j] = puzzle_board[i][j]
                     else:
                         self.line_edits[i][j].setText('')
                         self.line_edits[i][j].setReadOnly(False)
+                        self.puzzle.board[i][j] = None
             self.checkable = True
         except:
             print("An exception occurred to load the file")
@@ -179,19 +182,30 @@ class MainWindow(QMainWindow):
                 new_cell.textChanged.connect(partial(self.validation, i, j))
                 self.line_edits[i][j] = new_cell
 
-    def new_game(self):
+    def new_game(self, difficult):
         self.checkable = False
         self.editableCells.clear()
-        puzzle = Sudoku(3, seed= random.randint(1, 1000)).difficulty(0.5)
+        self.puzzle = Sudoku(3, seed= random.randint(1, 1000)).difficulty(difficult)
         for i in range(9):
             for j in range(9):
-                if puzzle.board[i][j] is not None:
+                self.line_edits[i][j].setStyleSheet('color: black')
+                if self.puzzle.board[i][j] is not None:
                     self.editableCells.append([i,j])
-                    self.line_edits[i][j].setText(str(puzzle.board[i][j]))
+                    self.line_edits[i][j].setText(str(self.puzzle.board[i][j]))
                     self.line_edits[i][j].setReadOnly(True)
                 else:
                     self.line_edits[i][j].setText('')
                     self.line_edits[i][j].setReadOnly(False)
+        self.checkable = True
+
+    def solve_puzzle(self):
+        self.checkable = False
+        for i in range(9):
+            for j in range(9):
+                if self.puzzle.board[i][j] is None:
+                    self.line_edits[i][j].setText(str(self.puzzle.solve().board[i][j]))
+                    self.line_edits[i][j].setStyleSheet('color: green')
+
         self.checkable = True
 
 
